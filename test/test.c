@@ -45,6 +45,12 @@ int main(void)
     assert(strcmp(expandtabs("", 11), "") == 0);
     assert(strcmp(expandtabs("\t\t", 5), "          ") == 0);
 
+    /* String count */
+    assert(count("Votai Test.", "otai") == 1);
+    assert(count("Votai Test.", "t") == 2);
+    assert(count("This is a test and ist should work", "is") == 3);
+    assert(count("", "is") == 0);
+    assert(count("Votai Test.", "Votai Test. is the best") == 0);
 
     printf("All tests have passed.\n");
     return 0;
