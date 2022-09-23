@@ -1,5 +1,6 @@
 # Project
 libString
+.vscode/
 
 # Prerequisites
 *.d
