@@ -60,7 +60,12 @@ int main(void)
     assert(endswith("This is a test and ist should work", "and ist should wor") == 0);
     assert(endswith("is", "this is") == 0);
     assert(endswith("Votai Test. is the best", "Votai Test. is the best") == 1);
-    assert(endswith("Votai Test. is the best.", "Votai Test. is the best") == 0);
+
+    assert(index("Python", "Python") == 0);
+    assert(index("Python", "python") == -1);
+    assert(index("Python", "thon") == 2);
+    assert(index("Votai Test.", ".") == 10);
+
 
     printf("All tests have passed.\n");
     return 0;

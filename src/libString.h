@@ -3,6 +3,7 @@
 /* UTILS */
 unsigned int len(char *str);
 unsigned int count(char *str, char *sub);
+int index(char *str, char *sub);
 
 /* CASE */
 char *capitalize(char *str);

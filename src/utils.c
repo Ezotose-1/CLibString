@@ -48,3 +48,38 @@ unsigned int count(char *str, char *sub)
     }
     return count;
 }
+
+/**
+ * Function: index/find
+ * --------------------
+ *  Returns the lowest index in the string where substring sub
+ *          is found.
+ * 
+ *  str: The original string
+ *  sub: Searched substring 
+ */
+int index(char *str, char *sub)
+{
+    unsigned int i = 0;
+    unsigned int startPos = len(str) + 1;
+
+    for (unsigned int pos = 0; pos < len(str); pos++)
+    {
+        if (str[pos] == sub[i])
+        {
+            startPos = (startPos > len(str)) ? pos : startPos;
+            if (i == len(sub) - 1)
+            {
+                return startPos;
+            }
+            else
+                i++;
+        }
+        else
+        {
+            i = 0;
+            startPos = -1;
+        }
+    }
+    return -1;
+}
