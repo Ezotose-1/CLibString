@@ -1,10 +1,10 @@
 CC=gcc
-SRC=
+SRC=src/utils.c
 CFLAGS=-Werror -Wextra -Wall -pedantic -std=c99
 BIN=libString
 
 all:
-	$(CC) test/test.c $(CFLAGS) $(SRC) -o $(BIN)
+	$(CC) $(CFLAGS) test/test.c $(SRC) -o $(BIN)
 
 clean:
 	rm $(BIN)
