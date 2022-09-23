@@ -7,4 +7,4 @@ all:
 	$(CC) $(CFLAGS) test/test.c $(SRC) -o $(BIN)
 
 clean:
-	rm $(BIN)
+	rm $(BIN) 
