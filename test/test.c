@@ -30,6 +30,12 @@ int main(void)
     assert(casefold(NULL) == NULL);
     assert(strcmp(casefold("aaaaaAAAA"), "aaaaaaaaa") == 0);
 
+    /* String center */
+    assert(strcmp(center("Votai Test.", 15), "  Votai Test.  ") == 0);
+    assert(strcmp(center("Votai Test", 15), "   Votai Test  ") == 0);
+    assert(strcmp(center("", 8), "        ") == 0);
+
+
     printf("All tests have passed.\n");
     return 0;
 }
