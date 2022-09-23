@@ -1,5 +1,5 @@
 CC=gcc
-SRC=src/utils.c src/case.c src/allign.c
+SRC=src/utils.c src/case.c src/allign.c src/compare.c
 CFLAGS=-Werror -Wextra -Wall -pedantic -std=c99
 BIN=libString
 

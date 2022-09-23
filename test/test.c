@@ -52,6 +52,16 @@ int main(void)
     assert(count("", "is") == 0);
     assert(count("Votai Test.", "Votai Test. is the best") == 0);
 
+    /* String endswith */
+    assert(endswith("Votai Test.", "Test.") == 1);
+    assert(endswith("Votai Test.", "Votai Test.") == 1);
+    assert(endswith("Votai Test.", "test.") == 0);
+    assert(endswith("This is a test and ist should work", "ist should work") == 1);
+    assert(endswith("This is a test and ist should work", "and ist should wor") == 0);
+    assert(endswith("is", "this is") == 0);
+    assert(endswith("Votai Test. is the best", "Votai Test. is the best") == 1);
+    assert(endswith("Votai Test. is the best.", "Votai Test. is the best") == 0);
+
     printf("All tests have passed.\n");
     return 0;
 }
