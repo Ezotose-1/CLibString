@@ -9,3 +9,4 @@ char *casefold(char *str);
 
 /* ALLIGN */
 char *center(char * str, unsigned int width);
+char *expandtabs(char *str, unsigned int tabsize);

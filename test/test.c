@@ -35,6 +35,16 @@ int main(void)
     assert(strcmp(center("Votai Test", 15), "   Votai Test  ") == 0);
     assert(strcmp(center("", 8), "        ") == 0);
 
+    /* String expandtabs */
+    assert(strcmp(expandtabs("Votai\tTest.\t", 4), "Votai   Test.   ") == 0);
+    assert(strcmp(expandtabs("Votai\tTest.\t", 5), "Votai     Test.     ") == 0);
+    assert(strcmp(expandtabs("Votai\tTe\tst.\t", 9), "Votai    Te       st.      ") == 0);
+    assert(strcmp(expandtabs("Votai\tTe\tst.\t", 10), "Votai     Te        st.       ") == 0);
+    assert(strcmp(expandtabs("Votai\tTest.\t", 10), "Votai     Test.     ") == 0);
+    assert(strcmp(expandtabs("Votai\tT\test.\t", 11), "Votai      T          est.       ") == 0);
+    assert(strcmp(expandtabs("", 11), "") == 0);
+    assert(strcmp(expandtabs("\t\t", 5), "          ") == 0);
+
 
     printf("All tests have passed.\n");
     return 0;

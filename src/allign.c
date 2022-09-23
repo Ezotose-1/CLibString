@@ -30,3 +30,34 @@ char *center(char * str, unsigned int width)
     
     return res;
 }
+
+/**
+ * Function: expandtabs
+ * --------------------
+ *  Returns a copy of the string where all tab characters
+ *          are replaced by one or more spaces
+ *
+ *  str: The original string
+ *  tabsize: Column given tab size
+ */
+char *expandtabs(char *str, unsigned int tabsize)
+{
+    unsigned int size  = len(str) + 1;
+    char *res = calloc(size, sizeof(char));
+    int i = 0;
+    for (int pos = 0; str[pos] != 0; pos++)
+    {
+        if (str[pos] == '\t')
+        {
+            int complete = tabsize - i % tabsize;
+            size += complete;
+            res = realloc(res, size);
+            for (; complete > 0; complete--)
+                res[i++] = ' ';
+        }
+        else
+            res[i++] = str[pos];
+    }
+    tabsize = tabsize;
+    return res;
+}
