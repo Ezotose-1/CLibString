@@ -71,6 +71,11 @@ int main(void)
     assert(py_isalnum("Bonuou5555r") == 1);
     assert(py_isalnum("Bonuour 5555") == 0);
 
+    assert(py_isalpha("Bonuour") == 1);
+    assert(py_isalpha("Bonuou5555r") == 0);
+    assert(py_isalpha("Bonuour 5555") == 0);
+
+
     printf("All tests have passed.\n");
     return 0;
 }

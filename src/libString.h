@@ -16,3 +16,4 @@ char *expandtabs(char *str, unsigned int tabsize);
 /* COMPARE */
 int endswith(char *str, char *suffix);
 int py_isalnum(char *str);
+int py_isalpha(char *str);

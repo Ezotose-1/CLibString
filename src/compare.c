@@ -44,3 +44,20 @@ int py_isalnum(char *str)
     }
     return 1;
 }
+
+/**
+ * Function isalpha
+ * ----------------
+ *  Return True if all the characters are alpha
+ * 
+ *  str: The original string
+ */
+int py_isalpha(char *str)
+{
+    for (; *str != 0; str++)
+    {
+        if (!IS_ALPHA(*str))
+            return 0;
+    }
+    return 1;
+}
