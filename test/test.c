@@ -61,11 +61,15 @@ int main(void)
     assert(endswith("is", "this is") == 0);
     assert(endswith("Votai Test. is the best", "Votai Test. is the best") == 1);
 
+    /* String index */
     assert(index("Python", "Python") == 0);
     assert(index("Python", "python") == -1);
     assert(index("Python", "thon") == 2);
     assert(index("Votai Test.", ".") == 10);
 
+    assert(py_isalnum("Bonuour") == 1);
+    assert(py_isalnum("Bonuou5555r") == 1);
+    assert(py_isalnum("Bonuour 5555") == 0);
 
     printf("All tests have passed.\n");
     return 0;
