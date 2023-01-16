@@ -1,7 +1,5 @@
 #include "libString.h"
-
-#define IS_MINU(A)  (A >= 'a' && A <= 'z' ? 1 : 0)
-#define IS_MAJU(A)  (A >= 'A' && A <= 'Z' ? 1 : 0)
+#include <ctype.h>
 
 /**
  * Function: capitalize
@@ -23,10 +21,10 @@ char *capitalize(char *str)
         res[i] = str[i];
         if (i == 0)
         {
-            if (IS_MINU(str[i]))
+            if (islower(str[i]))
                 res[i] -= 32;
         }
-        else if (IS_MAJU(str[i]))
+        else if (isupper(str[i]))
         {
             res[i] += 32;
         }
@@ -51,7 +49,7 @@ char *casefold(char *str)
     for (int i = 0; str[i] != 0; i++)
     {
         res[i] = str[i];
-        if (IS_MAJU(str[i]))
+        if (isupper(str[i]))
         {
             res[i] += 32;
         }
